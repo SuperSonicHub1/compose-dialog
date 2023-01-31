@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+"$(dirname -- "$0")/compose_dialog.py" | rofi -dmenu -mesg "Type a character using Compose." -p Character | awk -F '\t' '{print $1}' | sed "s/[<>]//g" | xargs xdotool key
